@@ -1,0 +1,30 @@
+<header>
+    <div class="wrapper">
+        <a class="skip-link" href="#main">Skip to main content</a>
+        {{ if eq .Kind "home" }}
+        <a href="/"><img class="home-header" src="/images/logo.jpg" alt="Floe Flexible learning for Open Education"></a>
+        {{ else }}
+        <a href="/"><img src="/images/logo.jpg" alt="Floe Flexible learning for Open Education"></a>
+        {{ end }}
+
+        {{ if .IsHome }}
+            {{ .Scratch.Set "currentSection" "home" }}
+        {{ else if eq .Section "news" }}
+            {{ .Scratch.Set "currentSection" "news" }}
+        {{ else if eq .Section "resources" }}
+            {{ .Scratch.Set "currentSection" "resources" }}      
+        {{ end }}
+        {{ $currentSection := .Scratch.Get "currentSection" }}
+        <nav role="navigation">
+            <button id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span>
+            </button>
+            <ul id="nav-menu">
+                {{- trim (partial "navbarEntry" (dict "Page" . "currentSection" $currentSection "entrySection" "home" "name" "Home" "link" "/_index.html" )) " \n" | safeHTML -}}
+                {{- trim (partial "navbarEntry" (dict "Page" . "currentSection" $currentSection "entrySection" "news" "name" "News" "link" "/news/_index.md" )) " \n" | safeHTML -}}
+                {{- trim (partial "navbarEntry" (dict "Page" . "currentSection" $currentSection "entrySection" "resources" "name" "Resources" "link" "/resources/_index.md" )) " \n" | safeHTML -}}
+                <li><a href="https://build.fluidproject.org/infusion/demos/uiOptions/" target="_blank">UI Options</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

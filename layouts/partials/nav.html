@@ -1,0 +1,14 @@
+<script>
+    var toggle = document.querySelector('#nav-toggle');
+    var menu = document.querySelector('#nav-menu');
+
+    toggle.addEventListener('click', function() {
+        if (menu.classList.contains('active')) {
+            this.setAttribute('aria-expanded', 'false');
+        } else {
+            this.setAttribute('aria-expanded', 'true');
+        }
+        toggle.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+</script>

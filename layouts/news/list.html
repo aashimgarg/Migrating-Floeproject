@@ -1,0 +1,13 @@
+{{ define "title" }}{{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section class="news-index">
+    <div class="wrapper">
+        {{ .Content }}
+        {{ range .Pages.ByDate.Reverse }}
+        <div class="news-posts">
+            <a class="news-posts-titles" href="{{.Permalink}}" >{{.Title}}</a>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
