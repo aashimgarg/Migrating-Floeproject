@@ -9,7 +9,7 @@ Floe provides the resources needed to enable inclusive access to personally rele
 You will need to [Install Hugo](https://gohugo.io/getting-started/installing/) and then run this command in the root of this directory:
 
 ```
-hugo server
+hugo server-D
 
 ```
 Now visit [http://localhost:1313/](http://localhost:1313/) to preview any changes you're making.
