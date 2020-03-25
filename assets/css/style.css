@@ -375,11 +375,6 @@ section.container-resources.text-container {
     background: rgb(255, 253, 112);
 }
 
-.timestamp {
-    color: #6D6D6D;
-    font-size: 0.85em;
-}
-
 footer {
     display: flex;
     flex-wrap: wrap;
@@ -493,10 +488,6 @@ footer a, footer a:visited {
 .indented {
     padding: 1em 0 0 1.5em;
     margin: 0;
-}
-
-.suggestions, .reflections {
-    padding: 0 2em 3em 2em;
 }
 
 .reflections {
